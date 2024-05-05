@@ -7,16 +7,10 @@
       "complete": true
     },
     {
-      "id": "3",
-      "title": "Task 3",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rutrum tristique massa a lobortis. Mauris nec arcu et magna semper hendrerit quis sed justo. In tristique risus id efficitur finibus. Aliquam id congue dolor. Praesent elementum metus et sollicitudin vulputate. Integer interdum massa id felis maximus, quis cursus sem congue.",
-      "complete": true
-    },
-    {
       "id": "4",
       "title": "Task 4",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec nisl cursus risus scelerisque bibendum. Praesent eget mattis neque. Suspendisse nec nisi eget mi tristique volutpat. Nunc semper imperdiet hendrerit. Etiam in efficitur nisl. Pellentesque malesuada, sapien vitae consequat tristique, lorem elit malesuada tortor, id viverra tellus nibh at lectus.",
-      "complete": false
+      "complete": true
     }
   ]
 }

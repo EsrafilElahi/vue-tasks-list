@@ -31,7 +31,6 @@ export default {
       axios.patch(this.backendUrl, { complete: !this.task.complete })
         .then(res => {
           if (res.status === 200) {
-            // refetch the all list
             this.$emit('refetchAllData')
           }
         })
@@ -42,7 +41,7 @@ export default {
       axios.delete(this.backendUrl)
         .then(res => {
           if (res.status === 200) {
-            // refetch the all list
+            this.$emit('refetchAllData')
           }
         })
     }
