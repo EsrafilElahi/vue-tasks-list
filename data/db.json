@@ -5,12 +5,6 @@
       "title": "Task 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tortor velit, tincidunt in neque ut, accumsan accumsan turpis. Proin vehicula est eu dapibus cursus. Donec tristique augue vel mattis fermentum. Cras lacinia augue ac luctus elementum. Curabitur et lorem eu lectus accumsan porttitor. Suspendisse ac faucibus felis. Pellentesque magna odio.",
       "complete": true
-    },
-    {
-      "id": "4",
-      "title": "Task 4",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec nisl cursus risus scelerisque bibendum. Praesent eget mattis neque. Suspendisse nec nisi eget mi tristique volutpat. Nunc semper imperdiet hendrerit. Etiam in efficitur nisl. Pellentesque malesuada, sapien vitae consequat tristique, lorem elit malesuada tortor, id viverra tellus nibh at lectus.",
-      "complete": true
     }
   ]
 }
