@@ -9,14 +9,34 @@
         <span class="material-icons">edit</span>
       </router-link>
 
-      <span class="material-icons tick">done</span>
+      <span class="material-icons tick" @click="handleCompleteTask">done</span>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-  props: ['task']
+  props: ['task'],
+
+  data() {
+    return {
+      backendUrl: `http://localhost:5000/tasks/${this.task.id}`
+    }
+  },
+
+  methods: {
+    handleCompleteTask() {
+      axios.patch(this.backendUrl, { complete: !this.task.complete })
+        .then(res => {
+          if (res.status === 200) {
+            // refetch the all list
+          }
+        })
+        .catch(err => console.log(err))
+    }
+  }
 }
 </script>
 
