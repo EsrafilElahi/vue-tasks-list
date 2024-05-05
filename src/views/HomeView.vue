@@ -14,7 +14,6 @@ export default {
   name: "HomePage",
   components: { TaskItem },
 
-
   data() {
     return {
       tasks: []

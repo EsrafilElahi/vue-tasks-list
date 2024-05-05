@@ -3,8 +3,8 @@
     <h4>{{ title }}</h4>
     <div class="actions">
       <span class="material-icons tick">delete</span>
-      <span>edit</span>
-      <span>complete</span>
+      <span class="material-icons">edit</span>
+      <span class="material-icons tick">done</span>
     </div>
   </div>
 </template>
@@ -38,5 +38,26 @@ export default {
 
 .actions span {
   cursor: pointer;
+}
+
+
+.material-icons {
+  font-size: 25px;
+  margin-left: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #bbb;
+}
+
+.material-icons:hover {
+  color: #777;
+}
+
+.project.complete {
+  border-left: 10px solid green;
+}
+
+.project.complete .tick {
+  color: green !important;
 }
 </style>
