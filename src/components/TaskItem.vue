@@ -3,7 +3,7 @@
     <h4>{{ task.title }}</h4>
 
     <div class="actions">
-      <span class="material-icons">delete</span>
+      <span class="material-icons" @click="handleDeleteTask">delete</span>
 
       <router-link :to="{ name: 'EditTask', params: { id: task.id } }">
         <span class="material-icons">edit</span>
@@ -32,9 +32,19 @@ export default {
         .then(res => {
           if (res.status === 200) {
             // refetch the all list
+            this.$emit('refetchAllData')
           }
         })
         .catch(err => console.log(err))
+    },
+
+    handleDeleteTask() {
+      axios.delete(this.backendUrl)
+        .then(res => {
+          if (res.status === 200) {
+            // refetch the all list
+          }
+        })
     }
   }
 }

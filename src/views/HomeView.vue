@@ -1,7 +1,7 @@
 <template>
   <div v-if="tasks.length" class="box-items">
     <div v-for="task in tasks" :key="task.id">
-      <TaskItem :task="task" />
+      <TaskItem :task="task" @refetchAllData="handleRefetchData" />
     </div>
   </div>
 </template>
@@ -20,10 +20,16 @@ export default {
     }
   },
 
+  methods: {
+    handleRefetchData() {
+      axios.get('http://localhost:5000/tasks').then(data => {
+        return this.tasks = data.data
+      })
+    }
+  },
+
   mounted() {
-    axios.get('http://localhost:5000/tasks').then(data => {
-      return this.tasks = data.data
-    })
+    this.handleRefetchData()
   }
 
 }
