@@ -1,8 +1,8 @@
 <template>
-  <div class="item">
-    <h4>{{ title }}</h4>
+  <div class="item" :class="{ complete: task.complete }">
+    <h4>{{ task.title }}</h4>
     <div class="actions">
-      <span class="material-icons tick">delete</span>
+      <span class="material-icons">delete</span>
       <span class="material-icons">edit</span>
       <span class="material-icons tick">done</span>
     </div>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  props: ['title']
+  props: ['task']
 }
 </script>
 
@@ -53,11 +53,11 @@ export default {
   color: #777;
 }
 
-.project.complete {
+.complete {
   border-left: 10px solid green;
 }
 
-.project.complete .tick {
+.complete .tick {
   color: green !important;
 }
 </style>

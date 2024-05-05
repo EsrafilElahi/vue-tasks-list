@@ -1,7 +1,7 @@
 <template>
   <div v-if="tasks.length" class="box-items">
     <div v-for="task in tasks" :key="task.id">
-      <TaskItem :title="task.title" />
+      <TaskItem :task="task" />
     </div>
   </div>
 </template>
