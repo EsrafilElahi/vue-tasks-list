@@ -11,6 +11,16 @@ const routes = [
     name: "AddTask",
     component: () => import("../views/AddTaskView.vue"),
   },
+  {
+    path: "/:id",
+    children: [
+      {
+        name: "EditTask",
+        path: "edit",
+        component: () => import("../views/EditTaskView.vue"),
+      },
+    ],
+  },
 ];
 
 const router = createRouter({

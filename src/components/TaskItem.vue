@@ -1,9 +1,14 @@
 <template>
   <div class="item" :class="{ complete: task.complete }">
     <h4>{{ task.title }}</h4>
+
     <div class="actions">
       <span class="material-icons">delete</span>
-      <span class="material-icons">edit</span>
+
+      <router-link :to="{ name: 'EditTask', params: { id: task.id } }">
+        <span class="material-icons">edit</span>
+      </router-link>
+
       <span class="material-icons tick">done</span>
     </div>
   </div>
