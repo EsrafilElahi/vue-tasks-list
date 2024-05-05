@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div class="box-items">
+      <Navbar />
       <router-view></router-view>
     </div>
   </div>
@@ -8,14 +9,11 @@
 
 <script>
 // import TaskItem from './components/TaskItem.vue';
+import Navbar from './components/Navbar.vue'
 
 export default {
   name: 'App',
-  // components: { TaskItem }
-
-  mounted() {
-    // this.$router.push("/add")
-  }
+  components: { Navbar }
 }
 </script>
 
