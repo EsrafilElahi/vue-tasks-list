@@ -21,6 +21,7 @@ export default {
   width: 100%;
   margin-inline: auto;
   padding: 1.3rem .8rem;
+  border: 1px solid rgba(235, 232, 232, 0.774);
   box-shadow: 1px 2px 3px rgba(119, 117, 117, 0.493);
   border-left: 10px solid red;
   box-shadow: 1rem;
@@ -33,5 +34,9 @@ export default {
 .actions {
   display: flex;
   gap: .7rem;
+}
+
+.actions span {
+  cursor: pointer;
 }
 </style>
