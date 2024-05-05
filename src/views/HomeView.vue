@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <TaskItem title="task 1" />
+  <div v-if="tasks.length" class="box-items">
+    <div v-for="task in tasks" :key="task.id">
+      <TaskItem :title="task.title" />
+    </div>
   </div>
 </template>
 
@@ -12,11 +14,26 @@ export default {
   name: "HomePage",
   components: { TaskItem },
 
+
+  data() {
+    return {
+      tasks: []
+    }
+  },
+
   mounted() {
-    axios.get('http://localhost:5000/tasks').then(data => console.log(data))
+    axios.get('http://localhost:5000/tasks').then(data => {
+      return this.tasks = data.data
+    })
   }
 
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.box-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+</style>

@@ -1,9 +1,7 @@
 <template>
   <div class="container">
-    <div class="box-items">
-      <Navbar />
-      <router-view></router-view>
-    </div>
+    <Navbar />
+    <router-view></router-view>
   </div>
 </template>
 
@@ -35,11 +33,5 @@ html body #app {
   width: 100%;
   height: 100vh;
   padding: 5rem 0;
-}
-
-.box-items {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 </style>
