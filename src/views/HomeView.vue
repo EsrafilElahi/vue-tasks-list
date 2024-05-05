@@ -1,10 +1,10 @@
 <template>
   <div class="filter-nav-div">
-    <FilterNav />
+    <FilterNav :activeFilterNav="activeFilterNav" :setActiveFilterNav="setActiveFilterNav" />
   </div>
 
   <div v-if="tasks.length" class="box-items">
-    <div v-for="task in tasks" :key="task.id">
+    <div v-for="task in filterTasks" :key="task.id">
       <TaskItem :task="task" @refetchAllData="handleRefetchData" />
     </div>
   </div>
@@ -12,8 +12,9 @@
 
 <script>
 import TaskItem from '../components/TaskItem.vue';
-import FilterNav from '../components/FilterNav.vue'
-import axios from 'axios'
+import FilterNav from '../components/FilterNav.vue';
+import axios from 'axios';
+
 
 export default {
   name: "HomePage",
@@ -21,7 +22,8 @@ export default {
 
   data() {
     return {
-      tasks: []
+      tasks: [],
+      activeFilterNav: "all"
     }
   },
 
@@ -30,11 +32,26 @@ export default {
       axios.get('http://localhost:5000/tasks').then(data => {
         return this.tasks = data.data
       })
+    },
+    setActiveFilterNav(newNav) {
+      this.activeFilterNav = newNav
     }
   },
 
   mounted() {
     this.handleRefetchData()
+  },
+
+  computed: {
+    filterTasks() {
+      if (this.activeFilterNav === 'done') {
+        return this.tasks.filter(task => task.complete)
+      } else if (this.activeFilterNav === 'not-done') {
+        return this.tasks.filter(task => !task.complete)
+      } else {
+        return this.tasks
+      }
+    }
   }
 
 }

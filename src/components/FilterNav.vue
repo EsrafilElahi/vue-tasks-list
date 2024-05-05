@@ -1,14 +1,14 @@
 <template>
   <nav class="filter-nav">
-    <button>all</button>
-    <button>done</button>
-    <button>not done</button>
+    <button @click="setActiveFilterNav('all')" :class="{ active: activeFilterNav === 'all' }">all</button>
+    <button @click="setActiveFilterNav('done')" :class="{ active: activeFilterNav === 'done' }">done</button>
+    <button @click="setActiveFilterNav('not-done')" :class="{ active: activeFilterNav === 'not-done' }">not done</button>
   </nav>
 </template>
 
 <script>
 export default {
-
+  props: ['activeFilterNav', 'setActiveFilterNav']
 }
 </script>
 
@@ -27,6 +27,6 @@ export default {
 }
 
 .filter-nav button.active {
-  color: #555;
+  color: #3b3b3b;
 }
 </style>
