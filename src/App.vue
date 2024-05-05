@@ -1,18 +1,21 @@
 <template>
   <div class="container">
     <div class="box-items">
-      <TaskItem title="task 1" />
-      <TaskItem title="task 2" />
+      <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
-import TaskItem from './components/TaskItem.vue';
+// import TaskItem from './components/TaskItem.vue';
 
 export default {
   name: 'App',
-  components: { TaskItem }
+  // components: { TaskItem }
+
+  mounted() {
+    // this.$router.push("/add")
+  }
 }
 </script>
 
@@ -23,19 +26,17 @@ export default {
   box-sizing: border-box;
 }
 
-html body {
-  width: 100vw;
-  height: 100vh;
-}
-
-#app {
+html body #app {
+  min-width: 100vw;
+  min-height: 100vh;
   width: 100%;
   height: 100%;
 }
+
 
 .container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   padding: 5rem 0;
 }
 
