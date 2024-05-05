@@ -1,18 +1,18 @@
 <template>
   <div class="container">
     <div class="box-items">
-      <ProjectITem title="task 1" />
-      <ProjectITem title="task 2" />
+      <TaskItem title="task 1" />
+      <TaskItem title="task 2" />
     </div>
   </div>
 </template>
 
 <script>
-import ProjectITem from './components/ProjectItem.vue';
+import TaskItem from './components/TaskItem.vue';
 
 export default {
   name: 'App',
-  components: { ProjectITem }
+  components: { TaskItem }
 }
 </script>
 
