@@ -25,6 +25,10 @@ export default {
     }
   },
 
+  updated() {
+    console.log('first', this.title)
+  },
+
   methods: {
     handleSubmit() {
       const newTask = {
